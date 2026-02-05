@@ -1,25 +1,109 @@
 <!DOCTYPE html>
-<html>
+<html lang="pt-BR">
 <head>
-<meta charset="utf-8">
+<meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Redirect</title>
+<title>Abrir no Telegram</title>
+<style>
+  body {
+    margin: 0;
+    padding: 0;
+    background: #f5f7fa;
+    font-family: -apple-system, BlinkMacSystemFont, Arial, sans-serif;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+  }
+  .container {
+    text-align: center;
+    padding: 20px;
+    max-width: 360px;
+    width: 100%;
+  }
+  .logo {
+    width: 96px;
+    height: 96px;
+    background: #2AABEE;
+    border-radius: 50%;
+    margin: 0 auto 20px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  .logo svg {
+    width: 52px;
+    height: 52px;
+    fill: #fff;
+  }
+  h1 {
+    font-size: 22px;
+    color: #111;
+    margin-bottom: 10px;
+  }
+  p {
+    font-size: 15px;
+    color: #555;
+    margin-bottom: 25px;
+  }
+  .button {
+    display: block;
+    width: 100%;
+    padding: 16px;
+    background: #2AABEE;
+    color: #fff;
+    text-decoration: none;
+    font-size: 18px;
+    font-weight: bold;
+    border-radius: 12px;
+    border: none;
+    cursor: pointer;
+  }
+  .button:active {
+    opacity: 0.85;
+  }
+  .small {
+    margin-top: 16px;
+    font-size: 13px;
+    color: #777;
+  }
+</style>
 </head>
 <body>
 
-<p style="text-align:center;font-family:Arial;font-size:14px;">
-Если Telegram не открылся — <a href="https://t.me/+ShZuR4U3euI0ZDky">нажмите сюда</a>
-</p>
+<div class="container">
+  <div class="logo">
+    <svg viewBox="0 0 24 24">
+      <path d="M9.78 18.65l.4-5.7L20.5 3.98c.46-.41-.1-.64-.72-.4L5.4 9.1c-.98.38-.97.91-.18 1.15l3.74 1.17L17.7 6.3c.41-.27.79-.13.48.14L10.7 14.2l-.3 4.45c.44 0 .64-.2.88-.43z"/>
+    </svg>
+  </div>
+
+  <h1>Abra no Telegram</h1>
+  <p>Toque no botão abaixo para continuar no Telegram</p>
+
+  <button class="button" id="openTg">
+    Abrir no Telegram
+  </button>
+
+  <div class="small">
+    Se não abrir automaticamente, toque no botão
+  </div>
+</div>
 
 <script>
-setTimeout(function () {
-  window.location.href =
-    "intent://t.me/+ShZuR4U3euI0ZDky#Intent;scheme=https;package=org.telegram.messenger;end";
-}, 500);
+(function () {
+  const tgLink = "https://t.me/+DRhQ7ZAJ8BthNGEy";
 
-setTimeout(function () {
-  window.location.href = "https://t.me/+ShZuR4U3euI0ZDky";
-}, 1800);
+  // Авто-редирект через 0.8 секунды
+  setTimeout(() => {
+    window.location.href = tgLink;
+  }, 800);
+
+  // Кнопка
+  document.getElementById("openTg").addEventListener("click", () => {
+    window.location.href = tgLink;
+  });
+})();
 </script>
 
 </body>
